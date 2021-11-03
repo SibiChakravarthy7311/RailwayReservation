@@ -1,0 +1,87 @@
+<html>
+ 
+<head>
+    <title>Railway Reservation</title>
+    <style>
+     body{
+        background-color: rgb(255, 205, 209);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px rgb(34, 0, 128);
+    }
+    table th,td{
+        border: solid 2px rgb(77, 0, 128);
+        padding: 10px;
+    } 
+    span{
+        font-size: xx-large;
+        color: brown;
+    }
+
+</style>
+</head>
+<body>
+    <p style="margin-left:550px;"><a href="train"></a></p>
+
+    <div class="container">
+        <table>
+            <table class="center">
+                <caption><span><span>Edit & Update</caption>
+        
+            <tbody>
+                <form method="GET"  action="{% url 'dayupdate' id %}"> 
+
+                    <tr>
+                        <td>Train_id</td>
+                        <td><input type="text" name="Train_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Available_date</td>
+                        <td><input type="text" name="Available_date" ></td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td><input type="text" name="Sunday" ></td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td><input type="text" name="Monday"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td><input type="text" name="Tuesday" ></td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td><input type="text" name="Wednesday" ></td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td><input type="text" name="Source_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td><input type="text" name="Friday"></td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td><input type="text" name="Saturday"></td>
+                    </tr>
+
+
+                        <td colspan="4"><button>Update</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

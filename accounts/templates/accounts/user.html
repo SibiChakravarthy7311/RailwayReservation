@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+</head>
+<style>
+    body{
+        background-color: rgb(205, 255, 251);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px rgb(0, 128, 117);
+    }
+    table th,td{
+        border: solid 2px rgb(128, 0, 107);
+        padding: 10px;
+    }
+    span{
+        font-size: xx-large;
+        color: rgb(151, 42, 165);
+    }
+
+</style>
+<table>
+        <table class="center">
+        <caption><span>User Detail</span></caption>
+        <tr>
+            <th>Name</th>
+            <th>E_mail</th>
+            <th>Phone_no</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Aadhar_no</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for i in u.user%}
+        <tr>
+            <td>{{i.Name}}</td>
+            <td>{{i.E_mail}}</td>
+            <td>{{i.Phone_no}}</td>
+            <td>{{i.Age}}</td>
+            <td>{{i.Gender}}</td>
+            <td>{{i.Aadhar_no}}</td>
+            <td style="padding:20px;"><a href="{% url 'edit' i.pk %}">Edit</a></td>
+            <td style="padding:10px;"><a href="{% url 'delete' i.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    <table>
+        <table class="center">
+        <caption><span>Reservation Detail</span></caption>
+        <tr>
+            <th>E_mail</th>
+            <th>PNR_id</th>
+            <th>Train_id</th>
+            <th>Reserved_mode</th>
+            <th>Reserved_date</th>
+            <th>Booked_status</th>
+            <th>no_of_booked_seats</th>
+            <th>Compartment_id</th>
+            <th>Route_id</th>
+            <th>Booked_amount</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        
+        </tr>            
+
+        {% for i in u.reserved%}
+        <tr>
+            <td>{{i.E_mail}}</td>
+            <td>{{i.PNR_id}}</td>
+            <td>{{i.Train_id}}</td>
+            <td>{{i.Reserved_mode}}</td>
+            <td>{{i.Reserved_date}}</td>
+            <td>{{i.Booked_status}}</td>
+            <td>{{i.no_of_booked_seats}}</td>
+            <td>{{i.Compartment_id}}</td>
+            <td>{{i.Route_id}}</td>
+            <td>{{i.Booked_amount}}</td>
+
+            <td style="padding:20px;"><a href="{% url 'edit' i.pk %}">Edit</a></td>
+            <td style="padding:10px;"><a href="{% url 'delete' i.pk %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+</table>
+<body>
+    
+</body>
+</html>

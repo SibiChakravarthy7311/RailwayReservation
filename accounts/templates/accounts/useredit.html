@@ -1,0 +1,75 @@
+<html>
+ 
+<head>
+    <title>Railway Reservation</title>
+    <style>
+     body{
+        background-color: rgb(205, 253, 255);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px green;
+    }
+    table th,td{
+        border: solid 2px rgb(77, 0, 128);
+        padding: 10px;
+    } 
+    span{
+        font-size: xx-large;
+        color: brown;
+    }
+
+</style>
+</head>
+<body>
+    <p style="text-align:center;"></p>
+
+    <div class="container">
+    
+            <table class="center">
+                <caption><span>Edit & Update</span></caption>
+        
+            <tbody>
+                <form method="GET" action="{% url 'userupdate' id %}"> 
+
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="Name" ></td>
+                    </tr>
+                    <tr>
+                        <td>E_mail</td>
+                        <td><input type="text" name="E_mail" ></td>
+                    </tr>
+                    <tr>
+                        <td>Phone_no</td>
+                        <td><input type="text" name="Phone_no" ></td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td><input type="text" name="Age"></td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td><input type="text" name="Gender" ></td>
+                    </tr>
+                    <tr>
+                        <td>Aadhar_no</td>
+                        <td><input type="text" name="Aadhar_no"></td>
+                    </tr>
+
+
+                        <td colspan="4" ><button>Update</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

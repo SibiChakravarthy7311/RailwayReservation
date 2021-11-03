@@ -1,0 +1,50 @@
+img{
+  height:200px;
+  width:300px;
+  }
+.Railway Reservation-form{
+  height:500px;
+  width:600px;
+  margin-top:5%;
+  margin-left:25%;
+}
+.Railway Reservation-head{
+  padding:8px;
+
+}
+.Railway Reservation-content .radio{
+  margin:10px 10px
+}
+.Railway Reservation-content2 .input{
+  width:400px;
+  padding:10px;
+  margin:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .tarikh{
+  margin:10px;
+  padding:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .person{
+
+  margin:10px;
+  padding:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .travel{
+
+  margin:10px;
+}
+.Railway Reservation-content2 .travel2{
+  padding:5px;
+}
+.Railway Reservation-content2 .submit-btn{
+  border:none;
+  outline:none;
+  width:200px;
+  padding:10px;
+  margin-right:200px;
+}
+
+

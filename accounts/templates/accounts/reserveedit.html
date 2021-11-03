@@ -1,0 +1,91 @@
+<html>
+ 
+<head>
+    <title>Railway Reservation</title>
+    <style>
+     body{
+        background-color: rgb(213, 205, 255);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px green;
+    }
+    table th,td{
+        border: solid 2px rgb(77, 0, 128);
+        padding: 10px;
+    } 
+    span{
+        font-size: xx-large;
+        color: brown;
+    }
+
+        
+</style>
+</head>
+<body>    
+    <p style="text-align:center;"></p>
+
+    <div class="container">
+        <table>
+            <table class="center">
+                <caption><span>Edit & Update</span></caption>
+        
+            <tbody>
+                <form method="GET" class="post-form" action="{% url 'reservationupdate' id %}"> 
+
+                    <tr>
+                        <td>E_mail</td>
+                        <td><input type="text" name="E_mail" ></td>
+                    </tr>
+                    <tr>
+                        <td>PNR_id</td>
+                        <td><input type="text" name="PNR_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Train_id</td>
+                        <td><input type="text" name="Train_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Reserved_mode</td>
+                        <td><input type="text" name="Reserved_mode"></td>
+                    </tr>
+                    <tr>
+                        <td>Reserved_date</td>
+                        <td><input type="text" name="Reserved_date"></td>
+                    </tr>
+                    <tr>
+                        <td>Booked_status</td>
+                        <td><input type="text" name="Booked_status"></td>
+                    </tr>
+                    <tr>
+                        <td>no_of_booked_seats</td>
+                        <td><input type="text" name="no_of_booked_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Compartment_id</td>
+                        <td><input type="text" name="Compartment_id"></td>
+                    </tr>
+                    <tr>
+                        <td>Route_id</td>
+                        <td><input type="text" name="Route_id"></td>
+                    </tr>
+                    <tr>
+                        <td>Booked_amount</td>
+                        <td><input type="text" name="Booked_amount"></td>
+                    </tr>
+
+                        <td colspan="3"><button>Update</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

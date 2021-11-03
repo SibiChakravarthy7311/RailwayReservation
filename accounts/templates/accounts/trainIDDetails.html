@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+</head>
+<style>
+    body{
+        background-color: rgb(249, 205, 255);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: rgb(165, 42, 42);
+    }
+    table{
+        border: solid 2px rgb(128, 0, 117);
+    }
+    table th,td{
+        border: solid 2px rgb(0, 119, 128);
+        padding: 10px;
+    }
+    span{
+        font-size: xx-large;
+        color: brown;
+    }
+</style>   
+<table class="center">
+<caption><span>Railway  Reservation System</span></caption>
+        <table class="center">
+         <caption><span>Train Detail</span></caption>
+        <tr>
+            <th>Train id</th>
+            <th>Train name</th>
+            <th>Route id</th>
+            <th>Arrival time</th>
+            <th>Departure time</th>
+            <th>Edit</th>
+            <th>Delete</th>
+
+        </tr>
+        {% for i in p.addtrain%}
+        <tr>
+            <td>{{i.Train_id}}</td>
+            <td>{{i.Train_name}}</td>
+            <td>{{i.Route_id}}</td>
+            <td>{{i.Arrival_time}}</td>
+            <td>{{i.Departure_time}}</td>
+            <td style="padding:20px;"><a href="{% url 'trainedit' i.id %}">Edit</a></td>
+            <td style="padding:10px;"><a href="{% url 'traindelete' i.id %}">Delete</a></td>
+
+        </tr>
+        {% endfor %}
+        <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="7"> <a style="color: white;" href="{% url 'summa' %}">Add Train</a> </td></tr>
+    </table>
+
+        <table class="center">
+        <caption><span>Compartment Details<span></caption>
+            <tr>
+                <th>Compartment id</th>
+                <th>Compartment type</th>
+                <th>Edit</th>
+                <th>Delete</th>
+    
+            </tr>
+            {% for i in p.form%}
+            <tr>
+                <td>{{i.Compartment_id}}</td>
+                <td>{{i.Compartment_type}}</td>
+                <td style="padding:20px;"><a href="{% url 'compartedit' i.id %}">Edit</a></td>
+                <td style="padding:10px;"><a href="{% url 'compartdelete' i.id %}">Delete</a></td>
+    
+            </tr>
+            {% endfor %}
+            <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="7"> <a style="color: white;" href="{% url 'comp' %}">Add Compartment</a> </td></tr>
+
+    </table>
+        <table class="center">
+        <caption><span>Station Detail</span></caption>
+
+            <tr>
+                <th>Station_id</th>
+                <th>Station_name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+    
+            </tr>
+            {% for i in p.station%}
+            <tr>
+                <td>{{i.Station_id}}</td>
+                <td>{{i.Station_name}}</td>
+                <td style="padding:20px;"><a href="{% url 'stationedit' i.id %}">Edit</a></td>
+                <td style="padding:10px;"><a href="{% url 'stationdelete' i.id %}">Delete</a></td>
+    
+            </tr>
+            {% endfor %}
+            <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="7"> <a style="color: white;" href="{% url 'station' %}">Add station</a> </td></tr>
+
+        </table>
+        <table class="center">
+        <caption><span>Route Details<span> </caption>
+
+            <tr>
+                        <th>Route id</th>
+                        <th>Source id</th>
+                        <th>Destination id</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+            
+                    </tr>
+                    {% for i in p.route%}
+                    <tr>
+                        <td>{{i.Route_id}}</td>
+                        <td>{{i.Source_id}}</td>
+                        <td>{{i.Destination_id}}</td>
+                        <td style="padding:20px;"><a href="{% url 'routeedit' i.id %}">Edit</a></td>
+                        <td style="padding:20px;"><a href="{% url 'routedelete' i.id %}">Delete</a></td>
+            
+                    </tr>
+                    {% endfor %}
+                    <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="7"> <a style="color: white;" href="{% url 'Route' %}">Add Route</a> </td></tr>
+
+                </table>
+                <table class="center">        
+                <caption><span>Day Details<span> </caption>
+
+                            <tr>
+                                <th>Train id</th>
+                                <th>Sunday</th>
+                                <th>Monday</th>
+                                <th>Tuesday</th>
+                                <th>Wednesday</th>
+                                <th>Thursday</th>
+                                <th>Friday</th>
+                                <th>Saturday</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                    
+                            </tr>            
+                            {% for i in p.day%}
+                            <tr>
+                                <td>{{i.Train_id}}</td>
+                                <td>{{i.Sunday}}</td>
+                                <td>{{i.Monday}}</td>
+                                <td>{{i.Tuesday}}</td>
+                                <td>{{i.Wednesday}}</td>
+                                <td>{{i.Thursday}}</td>
+                                <td>{{i.Friday}}</td>                               
+                                <td>{{i.Saturday}}</td>
+                                <td style="padding:20px;"><a href="{% url 'dayedit' i.id %}">Edit</a></td>
+                                <td style="padding:10px;"><a href="{% url 'daydelete' i.id %}">Delete</a></td>
+                    
+                            </tr>
+                            {% endfor %}
+                            <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="10"> <a style="color: white;" href="{% url 'day' %}">Add days</a> </td></tr>
+
+                        </table>
+                                        <table class="center">
+                                            <caption><span>Compartment map<span> </caption>
+
+                                                <tr>
+                                                <th>Train id</th>
+                                                <th>Compartment id</th>
+                                                <th>Tota no of seats</th>
+                                                <th>Available no of seats </th>
+                                                <th>Booking fare</th>
+                                                <th>Booked seats</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                        
+                    
+                                            </tr>            
+                                            {% for i in p.map%}
+                                            <tr>
+                                                <td>{{i.Train_id}}</td>
+                                                <td>{{i.Compartment_id}}</td>
+                                                <td>{{i.Total_no_of_seats}}</td>
+                                                <td>{{i.Available_no_of_seats}}</td>
+                                                <td>{{i.Booking_fare}}</td>
+                                                <td>{{i.Booked_seats}}</td>
+                                                <td style="padding:20px;"><a href="{% url 'compartmapedit' i.id %}">Edit</a></td>
+                                                <td style="padding:10px;"><a href="{% url 'compartmapdelete' i.id %}">Delete</a></td>
+                                            </tr>
+                                       
+                                             {% endfor %}
+                                             <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="10"> <a style="color: white;" href="{% url 'compmap' %}">Add Compartmap</a> </td></tr>
+
+                                            </table>        
+    <table class="center">
+    <caption><span>User Detail</span></caption>
+    <tr>
+        <th>Name</th>
+        <th>E_mail</th>
+        <th>Phone_no</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Aadhar_no</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    {% for i in p.user%}
+    <tr>
+        <td>{{i.Name}}</td>
+        <td>{{i.E_mail}}</td>
+        <td>{{i.Phone_no}}</td>
+        <td>{{i.Age}}</td>
+        <td>{{i.Gender}}</td>
+        <td>{{i.Aadhar_no}}</td>
+        <td style="padding:20px;"><a href="{% url 'useredit' i.id %}">Edit</a></td>
+        <td style="padding:10px;"><a href="{% url 'userdelete' i.id %}">Delete</a></td>
+
+    </tr>
+    {% endfor %}
+    <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="10"> <a style="color: white;" href="{% url 'user' %}"></a> </td></tr>
+
+</table>
+    <table class="center">
+    <caption><span>Reservation Detail</span></caption>
+    <tr>
+        <th>E_mail</th>
+        <th>PNR_id</th>
+        <th>Train_id</th>
+        <th>Reserved_mode</th>
+        <th>Reserved_date</th>
+        <th>Booked_status</th>
+        <th>no_of_booked_seats</th>
+        <th>Compartment_id</th>
+        <th>Route_id</th>
+        <th>Booked_amount</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    
+    </tr>            
+
+    {% for i in p.reserved%}
+    <tr>
+        <td>{{i.E_mail}}</td>
+        <td>{{i.PNR_id}}</td>
+        <td>{{i.Train_id}}</td>
+        <td>{{i.Reserved_mode}}</td>
+        <td>{{i.Reserved_date}}</td>
+        <td>{{i.Booked_status}}</td>
+        <td>{{i.no_of_booked_seats}}</td>
+        <td>{{i.Compartment_id}}</td>
+        <td>{{i.Route_id}}</td>
+        <td>{{i.Booked_amount}}</td>
+        <td style="padding:20px;"><a href="{% url 'reservationedit' i.id %}">Edit</a></td>
+        <td style="padding:10px;"><a href="{% url 'reservationdelete' i.id %}">Delete</a></td>
+
+        {% endfor %}
+        <tr><td style="background-color: rgb(3, 62, 172); color: wheat; text-align: center;"  colspan="12"> <a style="color: white;" href="{% url 'reservation' %}"></a> </td></tr>
+
+
+    </tr>
+    </table>
+<body>
+    
+</body>
+</html>

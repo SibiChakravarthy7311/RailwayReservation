@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+</head>
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px green;
+    }
+    table th,td{
+        border: solid 2px green;
+        padding: 10px;
+    }
+</style>
+<body>    
+  <h1>final Tokan</h1>      
+<table>
+        <tr>
+            <th>S.no</th>
+            <th>train_name</th>
+            <th>train_id</th>
+            <th>Seats_availability</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure_time</th>
+            <th>Arrival_time</th>
+            <th>Travel_time</th>
+            <th>Compartment_type</th>
+            <th>Fare</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phoneno</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Aadhar_no</th>
+            <th>Status</th>
+         </tr>
+        <tr>
+        
+     
+                     
+         {% for i in myresult %}       
+            <td>{{i}}</td>
+            {% endfor %}
+         
+        </tr>
+</table>
+</div>  
+</body>
+</html>

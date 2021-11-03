@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Railway Reservation</title>
+</head>
+<style>
+    body{
+        background-color: rgb(205, 255, 253);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px green;
+    }
+    table th,td{
+        border: solid 2px rgb(128, 0, 107);
+        padding: 10px;
+    }
+</style>
+<h1>Station Details</h1>      
+<table>
+    <table class="center">
+        <tr>
+            <th>Station_id</th>
+            <th>Station_name</th>
+            <th>Source_id</th>
+            <th>Destination_id</th>
+        </tr>
+        {% for i in form%}
+        <tr>
+            <td>{{i.Station_id}}</td>
+            <td>{{i.Station_name}}</td>
+            <td>{{i.Source_id}}</td>
+            <td>{{i.Destination_id}}</td>
+        </tr>
+        {% endfor %}
+</table>
+<body>
+    
+</body>
+</html>

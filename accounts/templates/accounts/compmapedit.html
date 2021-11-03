@@ -1,0 +1,71 @@
+<html>
+ 
+<head>
+    <title>Railway Reservation</title>
+    <style>
+     body{
+        background-color: rgb(255, 246, 205);
+    }
+    table.center {
+            margin-left: auto; 
+            margin-right: auto;
+    }
+    h1{
+        color: brown;
+    }
+    table{
+        border: solid 2px green;
+    }
+    table th,td{
+        border: solid 2px rgb(77, 0, 128);
+        padding: 10px;
+    } 
+    span{
+        font-size: xx-large;
+        color: brown;
+    }
+
+</style>
+</head>
+<body>
+    <p style="margin-left:550px;"><a href="train"></a></p>
+
+    <div class="container">
+        <table>
+            <table class="center">
+                <caption><span>Edit & Update</span></caption>
+        
+            <tbody>
+                <form method="GET"  action="{% url 'compartmapupdate' id %}"> 
+
+                    <tr>
+                        <td>Train_id</td>
+                        <td><input type="text" name="Train_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Compartment_id</td>
+                        <td><input type="text" name="Compartment_id" ></td>
+                    </tr>
+                    <tr>
+                        <td>Total_no_of_seats</td>
+                        <td><input type="text" name="Total_no_of_seats" ></td>
+                    </tr>
+                    <tr>
+                        <td>Available_no_of_seats</td>
+                        <td><input type="text" name="Available_no_of_seats"></td>
+                    </tr>
+                    <tr>
+                        <td>Booking_fare</td>
+                        <td><input type="text" name="Booking_fare"></td>
+                    </tr>
+
+
+                        <td colspan="4"><button>Update</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+ 
+</html>

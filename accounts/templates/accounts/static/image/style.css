@@ -1,0 +1,92 @@
+img{
+  height:900px;
+  width:900px;
+  }
+  body, html {
+    height: 100%;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url("img_train.jpg");
+  
+    /* Full height */
+    height: 100%;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.Railway Reservation-form{
+  height:500px;
+  width:600px;
+  margin-top:5%;
+  margin-left:25%;
+}
+.Railway Reservation-head{
+  padding:8px;
+
+}
+.Railway Reservation-content .radio{
+  margin:10px 10px
+}
+.Railway Reservation-content2 .input{
+  width:400px;
+  padding:10px;
+  margin:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .tarikh{
+  margin:10px;
+  padding:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .person{
+
+  margin:10px;
+  padding:10px;
+  color:#fff;
+}
+.Railway Reservation-content2 .travel{
+
+  margin:10px;
+}
+.Railway Reservation-content2 .travel2{
+  padding:5px;
+}
+.Railway Reservation-content2 .submit-btn{
+  border:none;
+  outline:none;
+  width:200px;
+  padding:10px;
+  margin-right:200px;
+}
+
+.form-control-primary {
+  margin: 10px;
+  opacity: 0.2;
+  border-radius: 2px;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 100;
+  padding: 70px 0 0 10px;
+  border-right: 1px solid #d3d3d3;
+}
+
+.left-sidebar {
+  position: sticky;
+  top:0;
+  height: calc(100vh - 70px)
+}
+
+.sidebar-nav li .nav-link {
+  color: #333;
+  font-weight: 500;
+}
